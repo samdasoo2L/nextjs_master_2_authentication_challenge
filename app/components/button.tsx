@@ -2,7 +2,7 @@
 
 import { useFormStatus } from "react-dom";
 
-export default function FormBtn() {
+export default function Button() {
   // form 처리 중일때 멈추게 해주는 용도 useFormStatus
   const { pending } = useFormStatus();
   return (

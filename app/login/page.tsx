@@ -1,8 +1,8 @@
 "use client";
 
 import { useFormState } from "react-dom";
-import FormBtn from "../components/form-btn";
-import FormInput from "../components/form-input";
+import Button from "../components/button";
+import Input from "../components/input";
 import { handleForm } from "./action";
 
 export default function Login() {
@@ -17,31 +17,31 @@ export default function Login() {
         action={action}
         className="flex flex-col justify-center min-w-72 w-1/3  gap-4"
       >
-        <FormInput
+        <Input
           name="email"
           pic="📧"
           placeholder="Email"
-          errors=""
+          errors={state?.error?.fieldErrors.email}
           type="email"
-          required={true}
+          required
         />
-        <FormInput
+        <Input
           name="username"
           pic="😀"
           placeholder="Username"
-          errors=""
+          errors={state?.error?.fieldErrors.username}
           type="text"
-          required={true}
+          required
         />
-        <FormInput
+        <Input
           name="password"
           pic="🤐"
           placeholder="Password"
           type="password"
-          errors={state?.errors ?? ""}
-          required={true}
+          errors={state?.error?.fieldErrors.password}
+          required
         />
-        <FormBtn />
+        <Button />
         {state?.success && (
           <div className="w-full p-3 bg-green-400 rounded-xl">
             ✅ Welcome back!

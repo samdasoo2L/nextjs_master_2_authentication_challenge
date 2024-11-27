@@ -1,14 +1,14 @@
-export default function FormInput({
+export default function Input({
   pic,
   placeholder,
   required,
   type,
-  errors,
+  errors = [],
   name,
 }: {
   pic: string;
   placeholder: string;
-  errors: string;
+  errors?: string[];
   required: boolean;
   type: string;
   name: string;
@@ -23,7 +23,10 @@ export default function FormInput({
         required={required}
         name={name}
       />
-      <div className="mt-1 text-red-500">{errors}</div>
+
+      {errors.map((errors) => (
+        <div className="mt-1 text-red-500">{errors}</div>
+      ))}
     </div>
   );
 }
