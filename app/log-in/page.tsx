@@ -3,13 +3,13 @@
 import { useFormState } from "react-dom";
 import Button from "../components/button";
 import Input from "../components/input";
-import { handleForm } from "./action";
+import { logIn } from "./action";
 
 export default function Login() {
   // 에러를 전달하기 위한 useFormState
   // 근데 action도 useFormState로 처리해야됨 그래야 에러를 받아올 수 있음
   // state가 action의 return value이다.
-  const [state, action] = useFormState(handleForm, null);
+  const [state, action] = useFormState(logIn, null);
   return (
     <div className="flex flex-col justify-center items-center mt-24 gap-10 w-full">
       <div className="text-5xl">⭐</div>
@@ -21,16 +21,8 @@ export default function Login() {
           name="email"
           pic="📧"
           placeholder="Email"
-          errors={state?.error?.fieldErrors.email}
+          errors={state?.fieldErrors.email}
           type="email"
-          required
-        />
-        <Input
-          name="username"
-          pic="😀"
-          placeholder="Username"
-          errors={state?.error?.fieldErrors.username}
-          type="text"
           required
         />
         <Input
@@ -38,11 +30,11 @@ export default function Login() {
           pic="🤐"
           placeholder="Password"
           type="password"
-          errors={state?.error?.fieldErrors.password}
+          errors={state?.fieldErrors.password}
           required
         />
-        <Button />
-        {state?.success && (
+        <Button text="Log in" />
+        {state && !state?.fieldErrors && (
           <div className="w-full p-3 bg-green-400 rounded-xl">
             ✅ Welcome back!
           </div>

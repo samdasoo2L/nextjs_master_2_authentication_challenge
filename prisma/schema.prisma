@@ -10,9 +10,9 @@ datasource db {
 model User {
   id Int @id @default(autoincrement())
   username String  @unique
-  password String
-  email String @unique
-  bio String
+  password String?
+  email String? @unique
+  bio String?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   Tweet   Tweet[]
