@@ -29,6 +29,7 @@ export default async function Home() {
   const initialTweet = await getInitialTweet();
   return (
     <div>
+      <Link href={`/tweets/add`}>+</Link>
       <Link href={`/create-account`}>Join</Link>
       <Link href={`/log-in`}>Login</Link>
       <TweetList initialTweets={initialTweet} />

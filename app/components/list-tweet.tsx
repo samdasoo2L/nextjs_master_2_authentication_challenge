@@ -16,11 +16,9 @@ export default function ListProduct({
 }: ListTweetProps) {
   return (
     <Link href={`/tweets/${id}`} className="flex gap-5">
-      <div className="relative size-28 rounded-md overflow-hidden"></div>
-      <div className="flex flex-col gap-1 *:text-white">
+      <div className="flex flex-col gap-1 *:text-black">
         <span className="text-lg">{tweet}</span>
-        <span className="text-sm text-neutral-500">{user}</span>
-        <span className="text-lg font-semibold">{created_at.toString()}</span>
+        <span className="text-sm text-neutral-500">{user.username}</span>
       </div>
     </Link>
   );
