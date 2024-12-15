@@ -3,6 +3,7 @@ import db from "../lib/db";
 import GoButton from "../components/go-button";
 
 const getUsers = async () => {
+  "use server";
   return await db.user.findMany();
 };
 
