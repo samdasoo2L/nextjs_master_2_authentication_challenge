@@ -7,11 +7,7 @@ import { useFormState } from "react-dom";
 import { editProfile } from "./actions";
 import GoButton from "@/app/components/go-button";
 
-export default async function EditProfile({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function EditProfile({ params }: { params: { id: string } }) {
   const id = Number(params.id);
   if (isNaN(id)) {
     return notFound();

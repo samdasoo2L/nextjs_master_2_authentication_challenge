@@ -24,8 +24,10 @@ export default function Input({
         {...rest}
       />
 
-      {errors.map((errors) => (
-        <div className="mt-1 text-red-500">{errors}</div>
+      {errors.map((errors, index) => (
+        <div key={index} className="mt-1 text-red-500">
+          {errors}
+        </div>
       ))}
     </div>
   );

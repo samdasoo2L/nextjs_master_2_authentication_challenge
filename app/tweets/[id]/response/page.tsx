@@ -7,11 +7,7 @@ import { useFormState } from "react-dom";
 import { createResponse } from "./actions";
 import Link from "next/link";
 
-export default async function CreateResponse({
-  params,
-}: {
-  params: { id: string };
-}) {
+export default function CreateResponse({ params }: { params: { id: string } }) {
   const id = Number(params.id);
   if (isNaN(id)) {
     return notFound();
