@@ -15,11 +15,17 @@ export default function ListProduct({
   id,
 }: ListTweetProps) {
   return (
-    <Link href={`/tweets/${id}`} className="flex gap-5">
-      <div className="flex flex-col gap-1 *:text-black">
-        <span className="text-lg">{tweet}</span>
-        <span className="text-sm text-neutral-500">{user.username}</span>
-      </div>
-    </Link>
+    <div>
+      <Link
+        href={`/tweets/${id}`}
+        className="rounded-lg flex gap-5 hover:bg-sky-200 mx-6 p-4 "
+      >
+        <div className="flex flex-col gap-1 *:text-black">
+          <span className="text-xl">🗨️ {tweet}</span>
+          <span className="text-lg text-neutral-500">😀 {user.username}</span>
+        </div>
+      </Link>
+      <div className="mt-4 border-b-2 border-sky-950 border-opacity-5 w-full"></div>
+    </div>
   );
 }

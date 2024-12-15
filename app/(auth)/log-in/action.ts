@@ -2,9 +2,9 @@
 // 이건 서버에서만 실행되어야 하는 action이야! 를 의미
 
 import { z } from "zod";
-import db from "../lib/db";
+import db from "../../lib/db";
 import bcrypt from "bcrypt";
-import getSession from "../lib/session";
+import getSession from "../../lib/session";
 import { redirect } from "next/navigation";
 
 const checkEmailExists = async (email: string) => {

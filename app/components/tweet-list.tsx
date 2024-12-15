@@ -26,17 +26,17 @@ export default function TweetList({ initialTweets }: TweetListProps) {
     setIsLoading(false);
   };
   return (
-    <div className="p-5 flex flex-col gap-5">
+    <div className="py-4 flex flex-col gap-5">
       {tweets.map((tweet) => (
         <ListTweet key={tweet.id} {...tweet} />
       ))}
       {isLastPage ? (
-        "No more items"
+        <div className="text-center">No more items 🙄</div>
       ) : (
         <button
           onClick={onLoadMoreClick}
           disabled={isLoading}
-          className="text-sm font-semibold bg-orange-500 w-fit mx-auto px-3 py-2 rounded-md hover:opacity-90 active:scale-95"
+          className="text-sm  font-semibold bg-sky-400 w-fit mx-auto px-3 py-2 rounded-md hover:opacity-80 active:scale-95"
         >
           {isLoading ? "로딩 중" : "Load more"}
         </button>

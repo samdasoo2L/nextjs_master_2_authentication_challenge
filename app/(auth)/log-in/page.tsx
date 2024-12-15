@@ -1,8 +1,8 @@
 "use client";
 
 import { useFormState } from "react-dom";
-import Button from "../components/button";
-import Input from "../components/input";
+import Button from "../../components/button";
+import Input from "../../components/input";
 import { logIn } from "./action";
 
 export default function Login() {

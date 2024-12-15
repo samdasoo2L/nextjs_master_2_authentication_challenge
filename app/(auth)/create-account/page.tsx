@@ -1,7 +1,7 @@
 "use client";
 
-import Button from "../components/button";
-import Input from "../components/input";
+import Button from "../../components/button";
+import Input from "../../components/input";
 import { useFormState } from "react-dom";
 import createAccount from "./action";
 
