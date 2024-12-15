@@ -1,6 +1,5 @@
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import LikeButton from "@/app/components/like-button";
-import Input from "@/app/components/input";
 import { getIsLiked, getIsOwner, getResponse, getTweet } from "./actions";
 import Link from "next/link";
 import getSession from "@/app/lib/session";

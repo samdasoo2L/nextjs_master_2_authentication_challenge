@@ -9,9 +9,6 @@ import GoButton from "@/app/components/go-button";
 
 export default function EditProfile({ params }: { params: { id: string } }) {
   const id = Number(params.id);
-  if (isNaN(id)) {
-    return notFound();
-  }
   const [state, dispatch] = useFormState(editProfile, null);
   return (
     <div>
