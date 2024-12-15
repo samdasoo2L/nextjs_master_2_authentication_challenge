@@ -9,9 +9,6 @@ import Link from "next/link";
 
 export default function CreateResponse({ params }: { params: { id: string } }) {
   const id = Number(params.id);
-  if (isNaN(id)) {
-    return notFound();
-  }
   const [state, dispatch] = useFormState(createResponse, null);
   return (
     <div>
